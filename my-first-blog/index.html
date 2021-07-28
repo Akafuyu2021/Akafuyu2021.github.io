@@ -6,15 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://Akafuyu2021.github.io/project">
-  <title>Archives | Akafuyu blog</title>
+  <title>CF954D Fight Against Traffic | Akafuyu blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Akafuyu blog">
-<meta property="og:url" content="https://akafuyu2021.github.io/project/archives/index.html">
+  <meta name="description" content="传送门  这道题之所以是蓝题，是因为他的思路十分难想，但是代码很好写。 先理解一下题目: 在一个无向联通图上找到一条边，使得$s \to t$的最短路变小。 求这种边的个数。   比如这个图，我们要使$s \to t$的距离变短，就得加一条边权为1的边$x \to y$。  一共有两种路径可选 第一种：$s \to y \to x \to t$ 第二种：$s \to x \to y \to t$">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CF954D Fight Against Traffic">
+<meta property="og:url" content="https://akafuyu2021.github.io/project/my-first-blog/index.html">
 <meta property="og:site_name" content="Akafuyu blog">
+<meta property="og:description" content="传送门  这道题之所以是蓝题，是因为他的思路十分难想，但是代码很好写。 先理解一下题目: 在一个无向联通图上找到一条边，使得$s \to t$的最短路变小。 求这种边的个数。   比如这个图，我们要使$s \to t$的距离变短，就得加一条边权为1的边$x \to y$。  一共有两种路径可选 第一种：$s \to y \to x \to t$ 第二种：$s \to x \to y \to t$">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/tudz1lri.png">
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/b5ov6m7b.png">
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/kmq6sjg4.png">
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/v9zzm35b.png">
+<meta property="article:published_time" content="2021-07-28T06:25:24.000Z">
+<meta property="article:modified_time" content="2021-07-28T06:45:14.203Z">
 <meta property="article:author" content="Akafuyu">
+<meta property="article:tag" content="题解">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.luogu.com.cn/upload/image_hosting/tudz1lri.png">
   
     <link rel="alternative" href="/atom.xml" title="Akafuyu blog" type="application/atom+xml">
   
@@ -150,36 +160,75 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-my-first-blog" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/project/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/project/my-first-blog/" class="archive-article-date">
-  	<time datetime="2021-07-28T06:25:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-28</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/project/my-first-blog/">CF954D Fight Against Traffic</a>
+    <h1 class="article-title" itemprop="name">
+      CF954D Fight Against Traffic
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/project/my-first-blog/" class="archive-article-date">
+  	<time datetime="2021-07-28T06:25:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF954D">传送门</a></p>
+<hr>
+<p>这道题之所以是蓝题，是因为他的思路十分难想，但是代码很好写。</p>
+<p>先理解一下题目:</p>
+<p>在一个无向联通图上找到一条边，使得$s \to t$的最短路变小。</p>
+<p>求这种边的个数。</p>
+<hr>
+<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/tudz1lri.png"></p>
+<p>比如这个图，我们要使$s \to t$的距离变短，就得加一条边权为1的边$x \to y$。</p>
+<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/b5ov6m7b.png"></p>
+<p>一共有两种路径可选</p>
+<p>第一种：<br>$s \to y \to x \to t$<br><img src="https://cdn.luogu.com.cn/upload/image_hosting/kmq6sjg4.png"></p>
+<p>第二种：<br>$s \to x \to y \to t$<br><img src="https://cdn.luogu.com.cn/upload/image_hosting/v9zzm35b.png"></p>
+<p>所以代码是这样实现的：</p>
+<p><code>dis1[id]</code>表示从s开始到<code>id</code>的最短路径。<br><code>dis2[id]</code>表示从t开始到<code>id</code>的最短路径。</p>
+<p>先从s和t分别做一遍<code>dijkstra</code>,他们的<code>dis</code>分别存在dis1和dis2里。</p>
+<p>然后再$O(n^2)$找两个点<code>(i, j)</code>，表示<code>(i, j)</code>之间连了一条边，如果<code>dis1[i] + dis2[j] + 1 &gt;= dis1[t]</code>即$s \to x \to y \to t$就说明加的这条边成功的让$s \to t$的最短路径变小了,<code>ans++;</code></p>
+<p>如果<code>dis1[j] + dis2[i] + 1 &gt;= dis1[t]</code>即$s \to y \to x \to t$就说明加的这条边成功的也让$s \to t$的最短路径变小了,<code>ans++;</code></p>
+<p>还有一个细节，就是已经有的边就不能加了，所以用一个flag记录已经有的边，如果<code>flag[i][j]</code>就<code>continue</code></p>
+<p>代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXN 1005</span></span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt; myv[MAXN];</span><br><span class="line"><span class="keyword">int</span> dis1[MAXN], dis2[MAXN];</span><br><span class="line"><span class="keyword">bool</span> vis[MAXN];</span><br><span class="line"><span class="keyword">bool</span> flg[MAXN][MAXN];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">adde</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	myv[x].<span class="built_in">push_back</span>(y);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dijkstra</span><span class="params">(<span class="keyword">int</span> s, <span class="keyword">int</span> *dis)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	priority_queue&lt;pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; &gt; myq;</span><br><span class="line">	<span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="built_in"><span class="keyword">sizeof</span></span>(vis));</span><br><span class="line">	dis[s] = <span class="number">0</span>;</span><br><span class="line">	myq.<span class="built_in">push</span>(<span class="built_in">make_pair</span>(<span class="number">0</span>, s));</span><br><span class="line">	<span class="keyword">while</span>(!myq.<span class="built_in">empty</span>())</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> id = myq.<span class="built_in">top</span>().second;</span><br><span class="line">		<span class="keyword">int</span> sum = myq.<span class="built_in">top</span>().first;</span><br><span class="line">		myq.<span class="built_in">pop</span>();</span><br><span class="line">		<span class="keyword">if</span>(vis[id])</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		vis[id] = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; myv[id].<span class="built_in">size</span>(); i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">int</span> nxt = myv[id][i];</span><br><span class="line">			<span class="keyword">if</span>(dis[nxt] &gt; dis[id] + <span class="number">1</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				dis[nxt] = dis[id] + <span class="number">1</span>;</span><br><span class="line">				myq.<span class="built_in">push</span>(<span class="built_in">make_pair</span>(-dis[nxt], nxt));</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n, m, s, t;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d %d %d %d&quot;</span>, &amp;n, &amp;m, &amp;s, &amp;t);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> u, v;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>, &amp;u, &amp;v);</span><br><span class="line">		flg[u][v]=<span class="number">1</span>;</span><br><span class="line">		flg[v][u]=<span class="number">1</span>;</span><br><span class="line">		<span class="built_in">adde</span>(u, v);</span><br><span class="line">		<span class="built_in">adde</span>(v, u);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">memset</span>(dis1, <span class="number">0x3f</span>, <span class="built_in"><span class="keyword">sizeof</span></span>(dis1));</span><br><span class="line">	<span class="built_in">dijkstra</span>(s, dis1);</span><br><span class="line">	<span class="built_in">memset</span>(dis2, <span class="number">0x3f</span>, <span class="built_in"><span class="keyword">sizeof</span></span>(dis2));</span><br><span class="line">	<span class="built_in">dijkstra</span>(t, dis2);</span><br><span class="line">	<span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n<span class="number">-1</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt;= n; j++)</span><br><span class="line">		&#123;	</span><br><span class="line">			<span class="keyword">if</span>(flg[i][j])</span><br><span class="line">				<span class="keyword">continue</span>;</span><br><span class="line">			<span class="keyword">if</span>(dis1[i]+dis2[j]+<span class="number">1</span> &gt;= dis1[t] &amp;&amp; dis1[j]+dis2[i]+<span class="number">1</span>&gt;=dis1[t])</span><br><span class="line">			&#123;</span><br><span class="line">				ans++;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, ans);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -191,40 +240,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://akafuyu2021.github.io/project/my-first-blog/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/project/hello-world/" class="archive-article-date">
-  	<time datetime="2021-07-28T05:21:59.165Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-28</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
+  
+<nav id="article-nav">
+  
+  
+    <a href="/project/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+        
+    </div>
+</aside>
+
+
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -247,8 +362,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
